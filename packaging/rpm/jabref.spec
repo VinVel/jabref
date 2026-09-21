@@ -1,22 +1,23 @@
-%global jabref_tag v6.0-alpha.6
-%global jabref_archive_version 6.0-alpha.6
-%global abbreviations_tag 2025-01-07
-%global csl_styles_tag v0.2.208
-%global csl_locales_tag v0.0.101
+%global jabref_tag v6.0-beta.1
+%global jabref_archive_version 6.0-beta.1
+# The beta tag points at this untagged abbreviations revision.
+%global abbreviations_commit 7006c6381aa8d8add1edebf05c097b3a4efef867
+%global csl_styles_tag v0.2.211
+%global csl_locales_tag v0.0.104
 # These repositories have no tags, so use the revisions pinned by the parent repository.
-%global themes_commit 5d7f4344c7c5c81195ed3574b641fb06e182ab4e
+%global themes_commit 25652cdef6e6b5d3c50b57198e9a29c40caad82b
 %global ltwa_commit 880536620bc5c42f48647fb66c87fec181e107d3
 %global debug_package %{nil}
 
 Name:           jabref
-Version:        6.0~alpha.6
+Version:        6.0~beta.1
 Release:        1%{?dist}
 Summary:        Bibliography reference manager
 License:        MIT
 URL:            https://www.jabref.org/
 Source0:        https://github.com/JabRef/jabref/archive/refs/tags/%{jabref_tag}.tar.gz
 Source1:        https://github.com/JabRef/themes.jabref.org/archive/%{themes_commit}.tar.gz
-Source2:        https://github.com/JabRef/abbrv.jabref.org/archive/refs/tags/%{abbreviations_tag}.tar.gz
+Source2:        https://github.com/JabRef/abbrv.jabref.org/archive/%{abbreviations_commit}.tar.gz
 Source3:        https://github.com/citation-style-language/styles/archive/refs/tags/%{csl_styles_tag}.tar.gz
 Source4:        https://github.com/citation-style-language/locales/archive/refs/tags/%{csl_locales_tag}.tar.gz
 Source5:        https://github.com/JabRef/ltwa/archive/%{ltwa_commit}.tar.gz
@@ -130,5 +131,5 @@ desktop-file-validate %{buildroot}%{_datadir}/applications/jabref.desktop
 %{_datadir}/icons/hicolor/64x64/apps/jabref.png
 
 %changelog
-* Sun Sep 13 2026 JabRef contributors <info@jabref.org> - 6.0~alpha.6-1
+* Mon Sep 21 2026 JabRef contributors <info@jabref.org> - 6.0~beta.1-1
 - Package JabRef for RPM-based Linux distributions
